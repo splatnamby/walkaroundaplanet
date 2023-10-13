@@ -15,8 +15,6 @@ func _physics_process(delta):
 	# Add the gravity.
 	if shouldBePulled:
 		gravity_direction = (get_parent().get_node("Planet").global_transform.origin - global_transform.origin).normalized()
-		var anglebetweengp = (gravity_direction * transform.basis.y) / (gravity_direction.length() * transform.basis.y.length())
-		
 		transform.basis.y = -gravity_direction
 	
 	if not is_on_floor():
